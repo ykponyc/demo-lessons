@@ -305,10 +305,7 @@
         <button class="nav-tab" data-tab="basic">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4L2 9l10 5 10-5-10-5z"/><path d="M6 11v5c0 1 3 3 6 3s6-2 6-3v-5"/></svg>Основные классы
         </button>
-        <button class="nav-tab" data-tab="webinar">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2.5"/><path d="M6.5 6.5a8 8 0 000 11M17.5 6.5a8 8 0 010 11M3.7 3.7a13 13 0 000 16.6M20.3 3.7a13 13 0 010 16.6"/></svg>Вебинарные классы
-        </button>
-        <button class="nav-tab" data-tab="profile">
+<button class="nav-tab" data-tab="profile">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v6L4.5 17a2 2 0 001.8 3h11.4a2 2 0 001.8-3L15 9V3"/><path d="M8 3h8M8.5 14h7"/></svg>Профильные классы
         </button>
     </div>
@@ -319,7 +316,7 @@
     <div class="landing-head">
         <div>
             <div class="eyebrow">Выберите формат</div>
-            <h2>Три формата обучения —<br>десятки живых уроков</h2>
+            <h2>Два формата обучения —<br>десятки живых уроков</h2>
         </div>
         <p>Каждое видео — запись реального занятия. Выберите формат, класс и предмет, чтобы увидеть, как учатся дети.</p>
     </div>
@@ -330,15 +327,6 @@
             <p>Тарифы «Классы» и «Доступ». Маленькие группы до 20 учеников и индивидуальный подход учителя.</p>
             <div class="section-card-foot">
                 <span class="section-card-count" id="countBasic"></span>
-                <span class="section-card-go">Смотреть<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-            </div>
-        </div>
-        <div class="section-card" onclick="switchTab('webinar')">
-            <div class="section-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2.5"/><path d="M6.5 6.5a8 8 0 000 11M17.5 6.5a8 8 0 010 11"/></svg></div>
-            <h3>Вебинарные классы</h3>
-            <p>Тариф «Вебинар». Групповые занятия до 160 учеников по доступной цене для всей семьи.</p>
-            <div class="section-card-foot">
-                <span class="section-card-count" id="countWebinar"></span>
                 <span class="section-card-go">Смотреть<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
             </div>
         </div>
@@ -487,20 +475,6 @@ const lessons = [
     {g:11,s:"Геометрия",t:"basic",u:"0yJyPFCiHLr28oTXP7tjYm"},
     {g:11,s:"Русский язык",t:"basic",u:"429rtYeq5DAu811TkT6khZ"},
     {g:11,s:"Физика",t:"basic",u:"bMuXK9NcZW8vpdjVhQjHu"},
-    {g:5,s:"Русский язык",t:"webinar",u:"2ustyPdAQPR4QpjFuUJSbL"},
-    {g:5,s:"История",t:"webinar",u:"qxZVDEBukCswfd7WkoCjei"},
-    {g:6,s:"Русский язык",t:"webinar",u:"shQ53bHHGsTYLFYbZktvrh"},
-    {g:6,s:"Английский язык",t:"webinar",u:"bQ6wXbBdMYd6bbXFVK3sFp"},
-    {g:7,s:"Русский язык",t:"webinar",u:"uwvWR6NZZi7rcrGQYSoUVK"},
-    {g:7,s:"Физика",t:"webinar",u:"6mtY8oFHEiQUejcsCrZTGy"},
-    {g:8,s:"Химия",t:"webinar",u:"x4gMuLp8KPgjTugxKfJMKo"},
-    {g:8,s:"Физика",t:"webinar",u:"s1PQo8uUJxY4WFDoSDdRuy"},
-    {g:9,s:"Английский язык",t:"webinar",u:"iAht3EiTFxwqGbLqzmxxEg"},
-    {g:9,s:"Информатика",t:"webinar",u:"pXbnxCw21TyUMeVFoGmY9B"},
-    {g:10,s:"Литература",t:"webinar",u:"eZQD2mCWSaxWvL458L3zCi"},
-    {g:10,s:"Биология",t:"webinar",u:"shhw1svq2UKpdwp3PJPGxd"},
-    {g:11,s:"География",t:"webinar",u:"4gEXzYLePGPaVfzkKmkQkQ"},
-    {g:11,s:"Биология",t:"webinar",u:"eUhhJ9cyAGy1wFwAXVNqtr"},
     {g:7,s:"Обществознание",t:"profile",p:"Социально-гуманитарный",u:"iCKogiDqxRNj47VA8Ma8bk"},
     {g:8,s:"Алгебра",t:"profile",p:"Информационно-математический",u:"5hk79W8ABNcZHSx4jy3RNr"},
     {g:8,s:"Информатика",t:"profile",p:"Информационно-математический",u:"piqp7vESiEtUo5CSRJeACv"},
@@ -544,8 +518,8 @@ function grad(c){ return `linear-gradient(135deg,${c[0]} 0%,${c[1]} 100%)`; }
 
 const logoWhite = "assets/logo-white.png";
 const playOverlay = `<div class="t-play"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="rgba(255,255,255,.28)"/><polygon points="10,7 10,17 18,12" fill="white"/></svg></div>`;
-const typeNames = { basic:"Основные классы", webinar:"Вебинарные классы", profile:"Профильные классы" };
-const typeFormat = { basic:"Малые группы · до 20 учеников", webinar:"Вебинар · до 160 учеников", profile:"Профиль · до 20 учеников" };
+const typeNames = { basic:"Основные классы", profile:"Профильные классы" };
+const typeFormat = { basic:"Малые группы · до 20 учеников", profile:"Профиль · до 20 учеников" };
 
 let currentTab="landing", currentType=null, currentGradeFilter="all";
 
@@ -554,7 +528,6 @@ const uniqSubjects = [...new Set(lessons.map(l=>l.s))].length;
 document.getElementById("statLessons").textContent = lessons.length;
 document.getElementById("statSubjects").textContent = uniqSubjects;
 document.getElementById("countBasic").textContent = lessons.filter(l=>l.t==="basic").length + " уроков";
-document.getElementById("countWebinar").textContent = lessons.filter(l=>l.t==="webinar").length + " уроков";
 document.getElementById("countProfile").textContent = lessons.filter(l=>l.t==="profile").length + " уроков";
 
 document.getElementById("nav").addEventListener("click", e => {
