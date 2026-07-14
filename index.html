@@ -4,574 +4,377 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Показательные уроки — Онлайн-школа №1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        @font-face {
-            font-family: 'Hoves';
-            src: local('Hoves Regular'), local('TT Hoves');
-            font-weight: 400;
-            font-style: normal;
-        }
-        @font-face {
-            font-family: 'Hoves';
-            src: local('Hoves Medium'), local('TT Hoves Medium');
-            font-weight: 500;
-            font-style: normal;
-        }
-        @font-face {
-            font-family: 'Hoves';
-            src: local('Hoves Bold'), local('TT Hoves Bold');
-            font-weight: 700;
-            font-style: normal;
-        }
-        @font-face {
-            font-family: 'Hoves';
-            src: local('Hoves ExtraBold'), local('TT Hoves ExtraBold');
-            font-weight: 800;
-            font-style: normal;
-        }
-        @font-face {
-            font-family: 'Hoves';
-            src: local('Hoves Black'), local('TT Hoves Black');
-            font-weight: 900;
-            font-style: normal;
-        }
+        @font-face { font-family:'Hoves'; src:local('Hoves Regular'),local('TT Hoves'); font-weight:400; font-style:normal; }
+        @font-face { font-family:'Hoves'; src:local('Hoves Medium'),local('TT Hoves Medium'); font-weight:500; font-style:normal; }
+        @font-face { font-family:'Hoves'; src:local('Hoves DemiBold'),local('TT Hoves DemiBold'); font-weight:600; font-style:normal; }
+        @font-face { font-family:'Hoves'; src:local('Hoves Bold'),local('TT Hoves Bold'); font-weight:700; font-style:normal; }
+        @font-face { font-family:'Hoves'; src:local('Hoves ExtraBold'),local('TT Hoves ExtraBold'); font-weight:800; font-style:normal; }
+        @font-face { font-family:'Hoves'; src:local('Hoves Black'),local('TT Hoves Black'); font-weight:900; font-style:normal; }
 
         :root {
-            /* Violet */
-            --violet-900: #3D0B87;
-            --violet-700: #5B2A8C;
-            --violet-500: #8A00FF;
-            --violet-400: #7C3AED;
-            --violet-200: #C9BCE8;
-            --violet-100: #E4DDF3;
-            --violet-50: #F5F2FB;
-            /* Lime */
-            --lime-500: #BFEF00;
-            --lime-400: #C4F000;
-            --lime-300: #8FD14F;
-            --lime-100: #DBF3D5;
-            --lime-900: #04463D;
-            /* Pink */
-            --pink-500: #FB55C4;
-            --pink-100: #FBD8ED;
-            /* Neutral */
-            --neutral-900: #111111;
-            --neutral-800: #141414;
-            --neutral-600: #3A3A3A;
-            --neutral-500: #5A5A5A;
-            --neutral-400: #6A6A6A;
-            --neutral-300: #8A8A8A;
-            --neutral-200: #9A9A9A;
-            --neutral-150: #D9D9D9;
-            --neutral-100: #EEEEEE;
-            --neutral-50: #F6F5F3;
-            --white: #FFFFFF;
-            /* Shadows */
-            --shadow-sm: 0 8px 20px rgba(30,10,60,.06);
-            --shadow-md: 0 16px 36px rgba(30,10,60,.10);
-            --shadow-lg: 0 28px 60px rgba(30,10,60,.16);
-            /* Radii */
-            --radius-sm: 12px;
-            --radius-md: 20px;
-            --radius-lg: 28px;
-            --radius-pill: 999px;
+            --violet-900:#3D0B87; --violet-700:#5B2A8C; --violet-500:#8A00FF; --violet-400:#7C3AED;
+            --violet-200:#C9BCE8; --violet-100:#E4DDF3; --violet-50:#F5F2FB;
+            --lime-500:#BFEF00; --lime-400:#C4F000; --lime-300:#8FD14F; --lime-100:#DBF3D5; --lime-900:#04463D;
+            --pink-500:#FB55C4; --pink-100:#FBD8ED;
+            --neutral-900:#111111; --neutral-800:#141414; --neutral-600:#3A3A3A; --neutral-500:#5A5A5A;
+            --neutral-400:#6A6A6A; --neutral-300:#8A8A8A; --neutral-200:#9A9A9A; --neutral-150:#D9D9D9;
+            --neutral-100:#EEEEEE; --neutral-50:#F6F5F3; --white:#FFFFFF;
+            --shadow-sm:0 8px 20px rgba(30,10,60,.06); --shadow-md:0 16px 36px rgba(30,10,60,.10); --shadow-lg:0 28px 60px rgba(30,10,60,.16);
+            --radius-sm:12px; --radius-md:20px; --radius-lg:28px; --radius-pill:999px;
         }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-
+        * { box-sizing:border-box; margin:0; padding:0; }
         body {
-            font-family: 'Hoves', 'TT Hoves', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: var(--white);
-            color: var(--neutral-800);
-            line-height: 1.5;
-            min-height: 100vh;
-            font-weight: 400;
+            font-family:'Hoves','Golos Text',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+            background:var(--neutral-50); color:var(--neutral-800); line-height:1.5; min-height:100vh; font-weight:400;
+            -webkit-font-smoothing:antialiased;
         }
+        a { color:var(--violet-500); text-decoration:none; }
+        a:hover { color:var(--violet-400); }
+        img { display:block; }
 
-        /* ── Header ── */
-        .header {
-            background: linear-gradient(135deg, var(--violet-900) 0%, var(--violet-500) 50%, var(--violet-400) 100%);
-            padding: 48px 24px 40px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
+        /* ── Utility bar ── */
+        .util-bar {
+            background:var(--neutral-900); color:rgba(255,255,255,.72);
+            font-size:13px; font-weight:500;
         }
-        .header::before {
-            content: '';
-            position: absolute;
-            top: -60px; right: -40px;
-            width: 200px; height: 200px;
-            background: var(--lime-400);
-            border-radius: 50%;
-            opacity: 0.08;
+        .util-inner {
+            max-width:1360px; margin:0 auto; padding:8px 24px;
+            display:flex; align-items:center; justify-content:space-between; gap:16px;
         }
-        .header::after {
-            content: '';
-            position: absolute;
-            bottom: -80px; left: 10%;
-            width: 300px; height: 300px;
-            background: var(--pink-500);
-            border-radius: 50%;
-            opacity: 0.06;
-        }
-        .header-badge {
-            display: inline-block;
-            background: rgba(196,240,0,0.15);
-            color: var(--lime-400);
-            padding: 6px 16px;
-            border-radius: var(--radius-pill);
-            font-size: 13px;
-            font-weight: 600;
-            margin-bottom: 16px;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            position: relative;
-        }
-        .header h1 {
-            font-size: clamp(28px, 5vw, 48px);
-            font-weight: 800;
-            color: var(--white);
-            margin-bottom: 8px;
-            letter-spacing: -0.02em;
-            position: relative;
-        }
-        .header p {
-            font-size: 16px;
-            font-weight: 400;
-            color: rgba(255,255,255,0.8);
-            max-width: 520px;
-            margin: 0 auto;
-            position: relative;
-        }
+        .util-left { display:flex; align-items:center; gap:22px; }
+        .util-left span { display:inline-flex; align-items:center; gap:7px; }
+        .util-left svg { width:15px; height:15px; opacity:.7; }
+        .util-right { display:flex; align-items:center; gap:22px; }
+        .util-right a { color:rgba(255,255,255,.72); font-weight:500; }
+        .util-right a:hover { color:var(--lime-400); }
+        .util-online { display:inline-flex; align-items:center; gap:7px; color:rgba(255,255,255,.72); }
+        .util-online .dot { width:8px; height:8px; border-radius:50%; background:var(--lime-400); box-shadow:0 0 0 3px rgba(196,240,0,.2); }
 
-        /* ── Navigation tabs ── */
+        /* ── Main header ── */
+        .topbar {
+            background:var(--white); border-bottom:1px solid var(--neutral-100);
+            position:sticky; top:0; z-index:60;
+        }
+        .topbar-inner {
+            max-width:1360px; margin:0 auto; padding:14px 24px;
+            display:flex; align-items:center; gap:32px;
+        }
+        .brand { display:flex; align-items:center; gap:12px; flex-shrink:0; }
+        .brand img { height:44px; width:auto; }
+        .brand .brand-div { width:1px; height:30px; background:var(--neutral-100); }
+        .brand .brand-sub { font-size:13px; font-weight:600; color:var(--neutral-400); line-height:1.25; max-width:120px; }
+        .main-nav { display:flex; align-items:center; gap:4px; margin-left:8px; }
+        .main-nav a {
+            padding:10px 15px; border-radius:var(--radius-sm); font-size:15px; font-weight:600;
+            color:var(--neutral-600); transition:all .15s;
+        }
+        .main-nav a:hover { background:var(--violet-50); color:var(--violet-400); }
+        .main-nav a.current { color:var(--violet-400); background:var(--violet-50); }
+        .topbar-cta { margin-left:auto; display:flex; align-items:center; gap:16px; }
+        .topbar-phone { font-size:16px; font-weight:700; color:var(--neutral-800); white-space:nowrap; }
+        .btn-primary {
+            border:none; background:var(--lime-400); color:var(--neutral-800);
+            font-family:inherit; font-size:15px; font-weight:700; padding:12px 24px;
+            border-radius:var(--radius-pill); cursor:pointer; transition:transform .15s, box-shadow .15s; white-space:nowrap;
+        }
+        .btn-primary:hover { transform:translateY(-1px); box-shadow:0 8px 20px rgba(143,209,79,.35); }
+        .burger { display:none; background:none; border:none; cursor:pointer; padding:8px; margin-left:auto; }
+        .burger svg { width:26px; height:26px; color:var(--neutral-800); }
+
+        /* ── Hero ── */
+        .hero {
+            background:var(--violet-900); padding:64px 24px 72px; position:relative; overflow:hidden;
+        }
+        .hero-video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; }
+        .hero-overlay { position:absolute; inset:0; z-index:1; background:linear-gradient(90deg, rgba(61,11,135,.92) 0%, rgba(61,11,135,.78) 42%, rgba(61,11,135,.35) 100%); }
+        .hero-inner { max-width:1360px; margin:0 auto; position:relative; z-index:2; }
+        .hero-badge {
+            display:inline-flex; align-items:center; gap:8px; background:rgba(196,240,0,.14);
+            color:var(--lime-400); padding:8px 18px; border-radius:var(--radius-pill);
+            font-size:13px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; margin-bottom:22px;
+        }
+        .hero-badge .dot { width:7px; height:7px; border-radius:50%; background:var(--lime-400); }
+        .hero h1 {
+            font-size:clamp(34px,5.2vw,62px); font-weight:800; color:var(--white);
+            letter-spacing:-.03em; line-height:1.02; margin-bottom:18px; max-width:16ch;
+        }
+        .hero p { font-size:clamp(16px,2vw,20px); font-weight:500; color:rgba(255,255,255,.82); max-width:60ch; line-height:1.5; }
+        .hero-stats { display:flex; gap:44px; margin-top:40px; flex-wrap:wrap; }
+        .hero-stat .num { font-size:38px; font-weight:800; color:var(--white); letter-spacing:-.02em; line-height:1; }
+        .hero-stat .num span { color:var(--lime-400); }
+        .hero-stat .lbl { font-size:14px; font-weight:500; color:rgba(255,255,255,.65); margin-top:8px; }
+
+        /* ── Section nav tabs ── */
         .nav {
-            background: var(--white);
-            border-bottom: 1px solid var(--neutral-100);
-            display: flex;
-            justify-content: center;
-            gap: 0;
-            position: sticky;
-            top: 0;
-            z-index: 50;
-            box-shadow: var(--shadow-sm);
+            background:var(--white); border-bottom:1px solid var(--neutral-100);
+            position:sticky; top:73px; z-index:50; box-shadow:var(--shadow-sm);
         }
+        .nav-inner { max-width:1360px; margin:0 auto; display:flex; gap:4px; padding:0 20px; overflow-x:auto; }
         .nav-tab {
-            padding: 16px 28px;
-            font-size: 14px;
-            font-weight: 500;
-            color: var(--neutral-300);
-            cursor: pointer;
-            border: none;
-            background: none;
-            border-bottom: 2px solid transparent;
-            transition: all 0.2s;
-            white-space: nowrap;
-            font-family: inherit;
+            padding:18px 22px; font-size:15px; font-weight:600; color:var(--neutral-400);
+            cursor:pointer; border:none; background:none; border-bottom:2.5px solid transparent;
+            transition:all .2s; white-space:nowrap; font-family:inherit;
+            display:inline-flex; align-items:center; gap:9px;
         }
-        .nav-tab:hover { color: var(--neutral-800); }
-        .nav-tab.active {
-            color: var(--violet-400);
-            border-bottom-color: var(--violet-400);
-            font-weight: 700;
-        }
-        .nav-tab .tab-icon { margin-right: 6px; }
+        .nav-tab svg { width:19px; height:19px; }
+        .nav-tab:hover { color:var(--neutral-800); }
+        .nav-tab.active { color:var(--violet-400); border-bottom-color:var(--violet-400); font-weight:700; }
 
-        /* ── Playlist layout ── */
-        .playlist-container {
-            max-width: 1360px;
-            margin: 0 auto;
-            padding: 24px;
-        }
-        .playlist {
-            display: grid;
-            grid-template-columns: 1fr 400px;
-            gap: 24px;
-            align-items: start;
-        }
-
-        /* ── Player ── */
-        .player-wrap {
-            position: sticky;
-            top: 76px;
-        }
-        .player-video {
-            position: relative;
-            padding-bottom: 56.25%;
-            background: var(--neutral-800);
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-        }
-        .player-video iframe {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            border: none;
-        }
-        .player-info {
-            padding: 16px 4px 0;
-        }
-        .player-title {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--neutral-800);
-            margin-bottom: 4px;
-        }
-        .player-meta {
-            font-size: 13px;
-            color: var(--neutral-300);
-            font-weight: 500;
-        }
-
-        /* ── Sidebar playlist ── */
-        .sidebar {
-            background: var(--white);
-            border-radius: var(--radius-md);
-            border: 1px solid var(--neutral-100);
-            overflow: hidden;
-            max-height: calc(100vh - 100px);
-            display: flex;
-            flex-direction: column;
-            box-shadow: var(--shadow-sm);
-        }
-        .sidebar-header {
-            padding: 16px 20px;
-            border-bottom: 1px solid var(--neutral-100);
-            font-size: 15px;
-            font-weight: 700;
-            color: var(--neutral-800);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-shrink: 0;
-        }
-        .sidebar-count {
-            font-size: 12px;
-            color: var(--neutral-300);
-            font-weight: 500;
-            background: var(--violet-50);
-            padding: 2px 10px;
-            border-radius: var(--radius-pill);
-        }
-        .sidebar-filter {
-            padding: 12px 16px;
-            border-bottom: 1px solid var(--neutral-100);
-            display: flex;
-            gap: 6px;
-            flex-wrap: wrap;
-            flex-shrink: 0;
-        }
-        .grade-chip {
-            padding: 6px 12px;
-            border-radius: var(--radius-pill);
-            font-size: 12px;
-            font-weight: 600;
-            cursor: pointer;
-            border: 1px solid var(--neutral-150);
-            background: transparent;
-            color: var(--neutral-300);
-            transition: all 0.15s;
-            font-family: inherit;
-        }
-        .grade-chip:hover {
-            border-color: var(--violet-200);
-            color: var(--violet-400);
-            background: var(--violet-50);
-        }
-        .grade-chip.active {
-            background: var(--violet-400);
-            color: var(--white);
-            border-color: var(--violet-400);
-        }
-        .sidebar-list {
-            overflow-y: auto;
-            flex: 1;
-        }
-        .sidebar-list::-webkit-scrollbar { width: 4px; }
-        .sidebar-list::-webkit-scrollbar-thumb { background: var(--violet-200); border-radius: 4px; }
-
-        /* ── Playlist item ── */
-        .pl-item {
-            display: flex;
-            gap: 12px;
-            padding: 10px 16px;
-            cursor: pointer;
-            transition: background 0.15s;
-            align-items: center;
-            border-left: 3px solid transparent;
-        }
-        .pl-item:hover { background: var(--violet-50); }
-        .pl-item.active {
-            background: var(--violet-50);
-            border-left-color: var(--violet-400);
-        }
-        .pl-item-num {
-            font-size: 12px;
-            color: var(--neutral-200);
-            min-width: 20px;
-            text-align: center;
-            flex-shrink: 0;
-            font-weight: 600;
-        }
-        .pl-item.active .pl-item-num { color: var(--violet-400); }
-        .pl-item-playing {
-            display: none;
-            width: 20px;
-            text-align: center;
-            flex-shrink: 0;
-        }
-        .pl-item.active .pl-item-num { display: none; }
-        .pl-item.active .pl-item-playing { display: block; color: var(--violet-400); font-size: 10px; }
-        .pl-item-thumb {
-            width: 120px;
-            height: 68px;
-            border-radius: var(--radius-sm);
-            flex-shrink: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 0;
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(135deg, var(--violet-900) 0%, var(--violet-500) 100%);
-        }
-        .pl-item-thumb .thumb-logo {
-            width: 48px;
-            height: auto;
-            opacity: 0.9;
-            margin-top: -2px;
-        }
-        .pl-item-thumb .thumb-tag {
-            font-size: 7px;
-            font-weight: 700;
-            color: var(--white);
-            background: rgba(255,255,255,0.18);
-            padding: 1px 6px;
-            border-radius: var(--radius-pill);
-            white-space: nowrap;
-            max-width: 110px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            margin-top: 2px;
-            letter-spacing: 0.2px;
-        }
-        .pl-item-thumb .thumb-play {
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(61,11,135,0.5);
-            opacity: 0;
-            transition: opacity 0.15s;
-        }
-        .pl-item-thumb .thumb-play svg {
-            width: 24px;
-            height: 24px;
-        }
-        .pl-item:hover .thumb-play { opacity: 1; }
-        .pl-item-info { flex: 1; min-width: 0; }
-        .pl-item-title {
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--neutral-800);
-            margin-bottom: 2px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
-        .pl-item.active .pl-item-title { color: var(--violet-400); }
-        .pl-item-sub {
-            font-size: 11px;
-            color: var(--neutral-300);
-            font-weight: 500;
-        }
-
-        /* ── Responsive thumbnail ── */
-        @media (max-width: 520px) {
-            .pl-item-thumb .thumb-logo { width: 40px; }
-            .pl-item-thumb .thumb-tag { font-size: 6px; }
-        }
-
-        /* ── Landing sections ── */
-        .landing { display: none; }
-        .landing.visible {
-            display: block;
-            padding: 48px 24px;
-            max-width: 960px;
-            margin: 0 auto;
-        }
-        .landing h2 {
-            font-size: 28px;
-            font-weight: 800;
-            color: var(--neutral-800);
-            margin-bottom: 4px;
-            letter-spacing: -0.02em;
-        }
-        .landing > p {
-            color: var(--neutral-500);
-            font-size: 15px;
-            font-weight: 400;
-        }
-        .section-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 20px;
-            margin-top: 32px;
-        }
+        /* ── Landing ── */
+        .landing { display:none; }
+        .landing.visible { display:block; padding:56px 24px 72px; max-width:1160px; margin:0 auto; }
+        .landing-head { display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap; }
+        .eyebrow { font-size:14px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--violet-500); margin-bottom:12px; }
+        .landing h2 { font-size:clamp(28px,3.6vw,42px); font-weight:800; color:var(--neutral-800); letter-spacing:-.02em; line-height:1.05; }
+        .landing-head p { color:var(--neutral-500); font-size:16px; font-weight:500; max-width:44ch; }
+        .section-cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:22px; margin-top:40px; }
         .section-card {
-            background: var(--white);
-            border: 1px solid var(--neutral-100);
-            border-radius: var(--radius-lg);
-            padding: 32px 24px;
-            cursor: pointer;
-            transition: all 0.25s;
-            text-align: center;
-            box-shadow: var(--shadow-sm);
+            background:var(--white); border:1px solid var(--neutral-100); border-radius:var(--radius-lg);
+            padding:34px 30px 30px; cursor:pointer; transition:all .25s; box-shadow:var(--shadow-sm);
+            display:flex; flex-direction:column; position:relative; overflow:hidden;
         }
-        .section-card:hover {
-            border-color: var(--violet-200);
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-md);
-        }
-        .section-card-icon {
-            width: 64px;
-            height: 64px;
-            border-radius: var(--radius-md);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            margin: 0 auto 16px;
-        }
-        .section-card:nth-child(1) .section-card-icon {
-            background: var(--violet-50);
-        }
-        .section-card:nth-child(2) .section-card-icon {
-            background: var(--lime-100);
-        }
-        .section-card:nth-child(3) .section-card-icon {
-            background: var(--pink-100);
-        }
-        .section-card h3 {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 8px;
-            color: var(--neutral-800);
-        }
-        .section-card p {
-            font-size: 14px;
-            color: var(--neutral-500);
-            margin-bottom: 16px;
-            line-height: 1.5;
-        }
-        .section-card-count {
-            display: inline-block;
-            background: var(--violet-50);
-            color: var(--violet-400);
-            padding: 4px 14px;
-            border-radius: var(--radius-pill);
-            font-size: 12px;
-            font-weight: 600;
-        }
+        .section-card::after { content:''; position:absolute; right:-40px; top:-40px; width:120px; height:120px; border-radius:50%; opacity:.5; transition:transform .3s; }
+        .section-card:nth-child(1)::after { background:var(--violet-50); }
+        .section-card:nth-child(2)::after { background:var(--lime-100); }
+        .section-card:nth-child(3)::after { background:var(--pink-100); }
+        .section-card:hover { border-color:var(--violet-200); transform:translateY(-5px); box-shadow:var(--shadow-md); }
+        .section-card:hover::after { transform:scale(1.25); }
+        .section-card-icon { width:60px; height:60px; border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center; margin-bottom:20px; position:relative; z-index:2; }
+        .section-card-icon svg { width:30px; height:30px; }
+        .section-card:nth-child(1) .section-card-icon { background:var(--violet-50); color:var(--violet-500); }
+        .section-card:nth-child(2) .section-card-icon { background:var(--lime-100); color:var(--lime-900); }
+        .section-card:nth-child(3) .section-card-icon { background:var(--pink-100); color:#A6237B; }
+        .section-card h3 { font-size:22px; font-weight:800; margin-bottom:10px; color:var(--neutral-800); letter-spacing:-.01em; position:relative; z-index:2; }
+        .section-card p { font-size:15px; color:var(--neutral-500); margin-bottom:22px; line-height:1.5; position:relative; z-index:2; flex:1; }
+        .section-card-foot { display:flex; align-items:center; justify-content:space-between; position:relative; z-index:2; }
+        .section-card-count { display:inline-flex; align-items:center; gap:7px; background:var(--violet-50); color:var(--violet-400); padding:7px 16px; border-radius:var(--radius-pill); font-size:13px; font-weight:700; }
+        .section-card-go { display:inline-flex; align-items:center; gap:6px; font-size:14px; font-weight:700; color:var(--neutral-300); transition:color .2s, gap .2s; }
+        .section-card:hover .section-card-go { color:var(--violet-400); gap:10px; }
+        .section-card-go svg { width:16px; height:16px; }
 
-        /* ── Back button ── */
-        .back-btn {
-            display: none;
-            align-items: center;
-            gap: 6px;
-            background: none;
-            border: none;
-            color: var(--neutral-300);
-            font-size: 14px;
-            font-weight: 500;
-            cursor: pointer;
-            padding: 8px 16px;
-            margin-bottom: 12px;
-            border-radius: var(--radius-pill);
-            transition: all 0.15s;
-            font-family: inherit;
-        }
-        .back-btn:hover {
-            color: var(--violet-400);
-            background: var(--violet-50);
-        }
-        .back-btn.visible { display: inline-flex; }
+        /* ── Playlist ── */
+        .playlist-container { max-width:1360px; margin:0 auto; padding:28px 24px 64px; }
+        .breadcrumb { display:flex; align-items:center; gap:8px; font-size:14px; font-weight:600; color:var(--neutral-300); margin-bottom:18px; flex-wrap:wrap; }
+        .breadcrumb a { color:var(--neutral-400); }
+        .breadcrumb a:hover { color:var(--violet-400); }
+        .breadcrumb .sep { color:var(--neutral-150); }
+        .breadcrumb .cur { color:var(--neutral-800); }
+        .playlist { display:grid; grid-template-columns:1fr 420px; gap:28px; align-items:start; }
+
+        .player-wrap { position:sticky; top:150px; }
+        .player-video { position:relative; padding-bottom:56.25%; background:var(--neutral-800); border-radius:var(--radius-md); overflow:hidden; box-shadow:var(--shadow-md); }
+        .player-video iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:none; }
+        .player-video .ph { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; color:rgba(255,255,255,.5); font-size:15px; font-weight:500; background:radial-gradient(120% 120% at 70% 20%,var(--violet-700),var(--violet-900)); }
+        .player-video .ph img { width:120px; opacity:.85; }
+        .player-info { padding:22px 4px 0; }
+        .player-titlerow { display:flex; align-items:flex-start; gap:16px; }
+        .player-mono { width:56px; height:56px; border-radius:var(--radius-sm); flex-shrink:0; display:flex; align-items:center; justify-content:center; color:#fff; font-size:20px; font-weight:800; letter-spacing:-.01em; }
+        .player-title { font-size:26px; font-weight:800; color:var(--neutral-800); letter-spacing:-.02em; line-height:1.15; }
+        .player-chips { display:flex; gap:8px; margin-top:12px; flex-wrap:wrap; }
+        .chip { display:inline-flex; align-items:center; gap:7px; padding:8px 15px; border-radius:var(--radius-pill); font-size:13px; font-weight:600; }
+        .chip-grade { background:var(--violet-50); color:var(--violet-400); }
+        .chip-format { background:var(--neutral-100); color:var(--neutral-600); }
+        .chip-profile { background:var(--pink-100); color:#A6237B; }
+        .chip-live { background:var(--lime-100); color:var(--lime-900); }
+        .chip-live .dot { width:7px; height:7px; border-radius:50%; background:var(--lime-300); }
+        .player-desc { margin-top:18px; font-size:16px; font-weight:500; color:var(--neutral-500); line-height:1.55; max-width:70ch; }
+
+        /* ── Sidebar ── */
+        .sidebar { background:var(--white); border-radius:var(--radius-md); border:1px solid var(--neutral-100); overflow:hidden; display:flex; flex-direction:column; box-shadow:var(--shadow-sm); max-height:calc(100vh - 174px); position:sticky; top:150px; }
+        .sidebar-header { padding:18px 20px; border-bottom:1px solid var(--neutral-100); display:flex; justify-content:space-between; align-items:center; flex-shrink:0; }
+        .sidebar-header .st { font-size:16px; font-weight:800; color:var(--neutral-800); letter-spacing:-.01em; }
+        .sidebar-count { font-size:12px; color:var(--violet-400); font-weight:700; background:var(--violet-50); padding:4px 12px; border-radius:var(--radius-pill); }
+        .sidebar-filter { padding:14px 16px; border-bottom:1px solid var(--neutral-100); display:flex; gap:7px; flex-wrap:wrap; flex-shrink:0; }
+        .grade-chip { padding:7px 13px; border-radius:var(--radius-pill); font-size:12px; font-weight:600; cursor:pointer; border:1.5px solid var(--neutral-150); background:transparent; color:var(--neutral-400); transition:all .15s; font-family:inherit; }
+        .grade-chip:hover { border-color:var(--violet-200); color:var(--violet-400); background:var(--violet-50); }
+        .grade-chip.active { background:var(--violet-400); color:var(--white); border-color:var(--violet-400); }
+        .sidebar-list { overflow-y:auto; flex:1; padding:6px 0; }
+        .sidebar-list::-webkit-scrollbar { width:5px; }
+        .sidebar-list::-webkit-scrollbar-thumb { background:var(--violet-200); border-radius:4px; }
+
+        .pl-item { display:flex; gap:13px; padding:9px 16px; cursor:pointer; transition:background .15s; align-items:center; border-left:3px solid transparent; }
+        .pl-item:hover { background:var(--violet-50); }
+        .pl-item.active { background:var(--violet-50); border-left-color:var(--violet-400); }
+        .pl-item-num { font-size:13px; color:var(--neutral-200); min-width:20px; text-align:center; flex-shrink:0; font-weight:700; }
+        .pl-item-playing { display:none; width:20px; text-align:center; flex-shrink:0; color:var(--violet-400); }
+        .pl-item.active .pl-item-num { display:none; }
+        .pl-item.active .pl-item-playing { display:flex; align-items:center; justify-content:center; }
+        .pl-item-playing svg { width:14px; height:14px; }
+        .pl-item-thumb { width:118px; height:66px; border-radius:var(--radius-sm); flex-shrink:0; position:relative; overflow:hidden; display:flex; align-items:center; justify-content:center; }
+        .pl-item-thumb .t-logo { position:absolute; top:6px; left:7px; width:34px; opacity:.75; }
+        .pl-item-thumb .t-mono { font-size:23px; font-weight:800; color:#fff; letter-spacing:-.01em; text-shadow:0 1px 6px rgba(0,0,0,.25); }
+        .pl-item-thumb .t-grade { position:absolute; right:6px; bottom:6px; background:rgba(255,255,255,.22); backdrop-filter:blur(3px); color:#fff; font-size:10px; font-weight:700; padding:2px 8px; border-radius:var(--radius-pill); }
+        .pl-item-thumb .t-play { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(61,11,135,.45); opacity:0; transition:opacity .15s; }
+        .pl-item-thumb .t-play svg { width:28px; height:28px; }
+        .pl-item:hover .t-play { opacity:1; }
+        .pl-item-info { flex:1; min-width:0; }
+        .pl-item-title { font-size:14px; font-weight:700; color:var(--neutral-800); margin-bottom:3px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+        .pl-item.active .pl-item-title { color:var(--violet-400); }
+        .pl-item-sub { font-size:12px; color:var(--neutral-300); font-weight:500; }
+
+        /* ── Footer ── */
+        .footer { background:var(--violet-900); color:rgba(255,255,255,.7); padding:56px 24px 32px; margin-top:40px; }
+        .footer-inner { max-width:1360px; margin:0 auto; }
+        .footer-top { display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; padding-bottom:40px; border-bottom:1px solid rgba(255,255,255,.12); }
+        .footer-brand img { height:52px; margin-bottom:18px; }
+        .footer-brand p { font-size:14px; line-height:1.55; max-width:32ch; }
+        .footer-col h4 { color:#fff; font-size:15px; font-weight:700; margin-bottom:16px; }
+        .footer-col a { display:block; color:rgba(255,255,255,.7); font-size:14px; font-weight:500; padding:6px 0; }
+        .footer-col a:hover { color:var(--lime-400); }
+        .footer-bottom { display:flex; align-items:center; justify-content:space-between; gap:20px; padding-top:26px; font-size:13px; flex-wrap:wrap; }
+        .footer-social { display:flex; gap:10px; }
+        .footer-social a { width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,.1); display:flex; align-items:center; justify-content:center; transition:background .2s; }
+        .footer-social a:hover { background:var(--lime-400); }
+        .footer-social a:hover svg { color:var(--violet-900); }
+        .footer-social svg { width:18px; height:18px; color:#fff; }
 
         /* ── Responsive ── */
-        @media (max-width: 860px) {
-            .playlist {
-                grid-template-columns: 1fr;
-            }
-            .player-wrap { position: static; }
-            .sidebar { max-height: 50vh; }
-            .header { padding: 32px 20px; }
+        @media (max-width:1000px) {
+            .main-nav, .util-left { display:none; }
+            .footer-top { grid-template-columns:1fr 1fr; gap:32px; }
         }
-        @media (max-width: 520px) {
-            .nav-tab { padding: 12px 16px; font-size: 13px; }
-            .pl-item-thumb { width: 100px; height: 56px; }
-            .landing.visible { padding: 32px 16px; }
-            .section-cards { gap: 12px; }
+        @media (max-width:860px) {
+            .playlist { grid-template-columns:1fr; }
+            .player-wrap, .sidebar { position:static; }
+            .sidebar { max-height:none; }
+            .sidebar-list { max-height:60vh; }
+            .nav { top:73px; }
+            .player-wrap { position:static; }
+        }
+        @media (max-width:680px) {
+            .topbar-phone { display:none; }
+            .main-nav { display:none; }
+            .hero-stats { gap:28px; }
+            .hero-stat .num { font-size:30px; }
+            .footer-top { grid-template-columns:1fr; }
+            .breadcrumb { font-size:13px; }
         }
     </style>
 </head>
 <body>
 
-<div class="header">
-    <div class="header-badge">2026-2027 учебный год</div>
-    <h1>Показательные уроки</h1>
-    <p>Посмотрите, как проходят живые уроки в Онлайн-школе №1. Реальные занятия — без монтажа и постановки.</p>
-</div>
-
-<div class="nav" id="nav">
-    <button class="nav-tab active" data-tab="landing"><span class="tab-icon">🏠</span>Главная</button>
-    <button class="nav-tab" data-tab="basic"><span class="tab-icon">🎓</span>Основные классы</button>
-    <button class="nav-tab" data-tab="webinar"><span class="tab-icon">📡</span>Вебинарные классы</button>
-    <button class="nav-tab" data-tab="profile"><span class="tab-icon">🔬</span>Профильные классы</button>
-</div>
-
-<!-- Landing -->
-<div class="landing visible" id="landing">
-    <h2>Выберите формат обучения</h2>
-    <p>Каждый урок — это запись реального занятия с нашими учениками</p>
-    <div class="section-cards">
-        <div class="section-card" onclick="switchTab('basic')">
-            <div class="section-card-icon">🎓</div>
-            <h3>Основные классы</h3>
-            <p>Тарифы «Классы» и «Доступ». Маленькие группы до 20 учеников, индивидуальный подход.</p>
-            <span class="section-card-count" id="countBasic"></span>
+<!-- Header -->
+<header class="topbar">
+    <div class="topbar-inner">
+        <a class="brand" href="#" onclick="switchTab('landing');return false;">
+            <img src="assets/logo.png" alt="Онлайн-школа №1">
+        </a>
+        <nav class="main-nav">
+            <a href="https://onlineschool-1.ru/programma-obucheniya/" target="_blank" rel="noopener">Программы</a>
+            <a href="https://onlineschool-1.ru/" target="_blank" rel="noopener">Тарифы</a>
+            <a href="#" class="current" onclick="switchTab('landing');return false;">Показательные уроки</a>
+            <a href="https://onlineschool-1.ru/" target="_blank" rel="noopener">Отзывы</a>
+            <a href="https://onlineschool-1.ru/blog/" target="_blank" rel="noopener">Блог</a>
+        </nav>
+        <div class="topbar-cta">
+            <a class="topbar-phone" href="tel:+78006004302" style="text-decoration:none;">8 800 600-43-02</a>
+            <a href="https://onlineschool-1.ru/" target="_blank" rel="noopener"><button class="btn-primary">Записаться</button></a>
         </div>
-        <div class="section-card" onclick="switchTab('webinar')">
-            <div class="section-card-icon">📡</div>
-            <h3>Вебинарные классы</h3>
-            <p>Тариф «Вебинар». Групповые занятия до 160 учеников, доступная цена.</p>
-            <span class="section-card-count" id="countWebinar"></span>
-        </div>
-        <div class="section-card" onclick="switchTab('profile')">
-            <div class="section-card-icon">🔬</div>
-            <h3>Профильные классы</h3>
-            <p>Углублённое изучение: инфо-мат, физ-мат, хим-био, соц-гум. До 20 учеников.</p>
-            <span class="section-card-count" id="countProfile"></span>
+        <button class="burger" aria-label="Меню"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+</header>
+
+<!-- Hero -->
+<div class="hero">
+    <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/logo-white.png">
+        <source src="https://onlineschool-1.ru/api/uploads/production_id_4495931_1080p_5f2a7ecde5.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-inner">
+        <span class="hero-badge"><span class="dot"></span>2026–2027 учебный год</span>
+        <h1>Показательные уроки</h1>
+        <p>Посмотрите, как проходят живые занятия в Онлайн-школе №1. Реальные уроки с нашими учителями и учениками — без монтажа и постановки.</p>
+        <div class="hero-stats">
+            <div class="hero-stat"><div class="num" id="statLessons">—</div><div class="lbl">записей уроков</div></div>
+            <div class="hero-stat"><div class="num" id="statSubjects">—</div><div class="lbl">школьных предметов</div></div>
+            <div class="hero-stat"><div class="num">1–11<span> кл.</span></div><div class="lbl">все ступени обучения</div></div>
+            <div class="hero-stat"><div class="num">3<span> формата</span></div><div class="lbl">на выбор семьи</div></div>
         </div>
     </div>
 </div>
 
-<!-- Playlist views -->
+<!-- Section nav -->
+<div class="nav" id="nav">
+    <div class="nav-inner">
+        <button class="nav-tab active" data-tab="landing">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg>Обзор
+        </button>
+        <button class="nav-tab" data-tab="basic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4L2 9l10 5 10-5-10-5z"/><path d="M6 11v5c0 1 3 3 6 3s6-2 6-3v-5"/></svg>Основные классы
+        </button>
+        <button class="nav-tab" data-tab="webinar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2.5"/><path d="M6.5 6.5a8 8 0 000 11M17.5 6.5a8 8 0 010 11M3.7 3.7a13 13 0 000 16.6M20.3 3.7a13 13 0 010 16.6"/></svg>Вебинарные классы
+        </button>
+        <button class="nav-tab" data-tab="profile">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v6L4.5 17a2 2 0 001.8 3h11.4a2 2 0 001.8-3L15 9V3"/><path d="M8 3h8M8.5 14h7"/></svg>Профильные классы
+        </button>
+    </div>
+</div>
+
+<!-- Landing -->
+<div class="landing visible" id="landing">
+    <div class="landing-head">
+        <div>
+            <div class="eyebrow">Выберите формат</div>
+            <h2>Три формата обучения —<br>десятки живых уроков</h2>
+        </div>
+        <p>Каждое видео — запись реального занятия. Выберите формат, класс и предмет, чтобы увидеть, как учатся дети.</p>
+    </div>
+    <div class="section-cards">
+        <div class="section-card" onclick="switchTab('basic')">
+            <div class="section-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4L2 9l10 5 10-5-10-5z"/><path d="M6 11v5c0 1 3 3 6 3s6-2 6-3v-5"/></svg></div>
+            <h3>Основные классы</h3>
+            <p>Тарифы «Классы» и «Доступ». Маленькие группы до 20 учеников и индивидуальный подход учителя.</p>
+            <div class="section-card-foot">
+                <span class="section-card-count" id="countBasic"></span>
+                <span class="section-card-go">Смотреть<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+        </div>
+        <div class="section-card" onclick="switchTab('webinar')">
+            <div class="section-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2.5"/><path d="M6.5 6.5a8 8 0 000 11M17.5 6.5a8 8 0 010 11"/></svg></div>
+            <h3>Вебинарные классы</h3>
+            <p>Тариф «Вебинар». Групповые занятия до 160 учеников по доступной цене для всей семьи.</p>
+            <div class="section-card-foot">
+                <span class="section-card-count" id="countWebinar"></span>
+                <span class="section-card-go">Смотреть<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+        </div>
+        <div class="section-card" onclick="switchTab('profile')">
+            <div class="section-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v6L4.5 17a2 2 0 001.8 3h11.4a2 2 0 001.8-3L15 9V3"/><path d="M8 3h8M8.5 14h7"/></svg></div>
+            <h3>Профильные классы</h3>
+            <p>Углублённое изучение: инфо-мат, физ-мат, хим-био и соц-гум направления. Группы до 20 учеников.</p>
+            <div class="section-card-foot">
+                <span class="section-card-count" id="countProfile"></span>
+                <span class="section-card-go">Смотреть<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Playlist -->
 <div class="playlist-container" id="playlistContainer" style="display:none;">
-    <button class="back-btn visible" onclick="switchTab('landing')">← Назад к разделам</button>
+    <div class="breadcrumb" id="breadcrumb"></div>
     <div class="playlist">
         <div class="player-wrap">
             <div class="player-video" id="playerVideo"></div>
             <div class="player-info">
-                <div class="player-title" id="playerTitle">Выберите урок из списка</div>
-                <div class="player-meta" id="playerMeta"></div>
+                <div class="player-titlerow">
+                    <div class="player-mono" id="playerMono" style="display:none;"></div>
+                    <div>
+                        <div class="player-title" id="playerTitle">Выберите урок из списка</div>
+                        <div class="player-chips" id="playerChips"></div>
+                    </div>
+                </div>
+                <p class="player-desc" id="playerDesc"></p>
             </div>
         </div>
         <div class="sidebar">
             <div class="sidebar-header">
-                <span id="sidebarTitle">Плейлист</span>
+                <span class="st" id="sidebarTitle">Плейлист</span>
                 <span class="sidebar-count" id="sidebarCount"></span>
             </div>
             <div class="sidebar-filter" id="sidebarFilter"></div>
@@ -580,9 +383,49 @@
     </div>
 </div>
 
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <img src="assets/logo-white.png" alt="Онлайн-школа №1">
+                <p>Аккредитованная онлайн-школа с 1 по 11 класс. Аттестат государственного образца и живые уроки с учителями.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Обучение</h4>
+                <a href="https://onlineschool-1.ru/programma-obucheniya/" target="_blank" rel="noopener">Программы</a>
+                <a href="https://onlineschool-1.ru/" target="_blank" rel="noopener">Тарифы</a>
+                <a href="#" onclick="switchTab('landing');return false;">Показательные уроки</a>
+                <a href="https://onlineschool-1.ru/" target="_blank" rel="noopener">Поступление</a>
+            </div>
+            <div class="footer-col">
+                <h4>О школе</h4>
+                <a href="https://onlineschool-1.ru/" target="_blank" rel="noopener">О нас</a>
+                <a href="https://onlineschool-1.ru/" target="_blank" rel="noopener">Отзывы</a>
+                <a href="https://onlineschool-1.ru/blog/" target="_blank" rel="noopener">Блог</a>
+                <a href="https://onlineschool-1.ru/" target="_blank" rel="noopener">Контакты</a>
+            </div>
+            <div class="footer-col">
+                <h4>Поддержка</h4>
+                <a href="https://onlineschool-1.ru/" target="_blank" rel="noopener">Помощь</a>
+                <a href="https://onlineschool-1.ru/" target="_blank" rel="noopener">Войти в кабинет</a>
+                <a href="tel:+78006004302">8 800 600-43-02</a>
+                <a href="https://onlineschool-1.ru/" target="_blank" rel="noopener">Документы</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2016–2026 Онлайн-школа №1 · <a href="https://onlineschool-1.ru/" target="_blank" rel="noopener" style="color:rgba(255,255,255,.7);">onlineschool-1.ru</a></span>
+            <div class="footer-social">
+                <a href="#" aria-label="ВКонтакте"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.8 16.3c-5 0-8.2-3.5-8.4-9.2h2.5c.1 4.2 2 6 3.5 6.3V7.1h2.4v3.6c1.4-.2 2.9-1.8 3.4-3.6h2.4c-.4 2.2-1.9 3.8-3 4.5 1.1.5 2.8 1.9 3.5 4.7h-2.6c-.5-1.8-1.9-3.2-3.7-3.4v3.4h-.4z"/></svg></a>
+                <a href="#" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.5 4.3L2.9 11.5c-.9.4-.9 1.5 0 1.8l4.7 1.5 1.8 5.6c.2.6 1 .8 1.5.3l2.6-2.4 4.7 3.5c.6.4 1.4.1 1.5-.6l3-14.5c.2-.9-.6-1.6-1.5-1.2z"/></svg></a>
+                <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.5c-.3-1-1-1.8-2-2C19.1 5 12 5 12 5s-7.1 0-9 .5c-1 .3-1.7 1-2 2C.5 9.4.5 12 .5 12s0 2.6.5 4.5c.3 1 1 1.8 2 2C4.9 19 12 19 12 19s7.1 0 9-.5c1-.3 1.7-1 2-2 .5-1.9.5-4.5.5-4.5s0-2.6-.5-4.5zM9.8 15.3V8.7l6 3.3-6 3.3z"/></svg></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
 <script>
 const lessons = [
-    // ── Основные классы ──
     {g:1,s:"Литературное чтение",t:"basic",u:"gL39eoFzrpojoHSfZU3yYp"},
     {g:1,s:"Русский язык",t:"basic",u:"t8cZ4uT7ytxMosEvTh8AAf"},
     {g:1,s:"Математика",t:"basic",u:"ohbu2hqAwmJAJeLXfhgG4m"},
@@ -628,8 +471,6 @@ const lessons = [
     {g:11,s:"Геометрия",t:"basic",u:"0yJyPFCiHLr28oTXP7tjYm"},
     {g:11,s:"Русский язык",t:"basic",u:"429rtYeq5DAu811TkT6khZ"},
     {g:11,s:"Физика",t:"basic",u:"bMuXK9NcZW8vpdjVhQjHu"},
-
-    // ── Вебинарные ──
     {g:5,s:"Русский язык",t:"webinar",u:"2ustyPdAQPR4QpjFuUJSbL"},
     {g:5,s:"История",t:"webinar",u:"qxZVDEBukCswfd7WkoCjei"},
     {g:6,s:"Русский язык",t:"webinar",u:"shQ53bHHGsTYLFYbZktvrh"},
@@ -644,8 +485,6 @@ const lessons = [
     {g:10,s:"Биология",t:"webinar",u:"shhw1svq2UKpdwp3PJPGxd"},
     {g:11,s:"География",t:"webinar",u:"4gEXzYLePGPaVfzkKmkQkQ"},
     {g:11,s:"Биология",t:"webinar",u:"eUhhJ9cyAGy1wFwAXVNqtr"},
-
-    // ── Профильные ──
     {g:7,s:"Обществознание",t:"profile",p:"Социально-гуманитарный",u:"iCKogiDqxRNj47VA8Ma8bk"},
     {g:8,s:"Алгебра",t:"profile",p:"Информационно-математический",u:"5hk79W8ABNcZHSx4jy3RNr"},
     {g:8,s:"Информатика",t:"profile",p:"Информационно-математический",u:"piqp7vESiEtUo5CSRJeACv"},
@@ -676,45 +515,40 @@ const lessons = [
     {g:11,s:"Биология",t:"profile",p:"Химико-биологический",u:"tDVWnj6DxvZg8WBUuXAfux"},
 ];
 
-const emoji = {
-    "Русский язык":"📖","Математика":"📐","Литературное чтение":"📚",
-    "Английский язык":"🇬🇧","Окружающий мир":"🌍","Алгебра":"📊",
-    "Геометрия":"📏","Литература":"📕","География":"🗺️",
-    "Физика":"⚡","Химия":"🧪","Биология":"🧬",
-    "Информатика":"💻","История":"🏛️","Обществознание":"⚖️"
+// Subject monogram + brand color system (replaces emoji)
+const V=["#5B2A8C","#8A00FF"], B=["#123C86","#3556E0"], G=["#146B3A","#34A853"], P=["#A6237B","#C74AA0"];
+const subjectMeta = {
+    "Русский язык":{a:"Ру",c:V}, "Литературное чтение":{a:"ЛЧ",c:V}, "Литература":{a:"Ли",c:V}, "Английский язык":{a:"Ая",c:V},
+    "Математика":{a:"Ма",c:B}, "Алгебра":{a:"Ал",c:B}, "Геометрия":{a:"Ге",c:B}, "Информатика":{a:"Ин",c:B},
+    "Физика":{a:"Фи",c:G}, "Химия":{a:"Хи",c:G}, "Биология":{a:"Би",c:G},
+    "Окружающий мир":{a:"Ом",c:P}, "География":{a:"Гг",c:P}, "История":{a:"Ис",c:P}, "Обществознание":{a:"Об",c:P},
 };
+function meta(s){ return subjectMeta[s] || {a:s.slice(0,2), c:V}; }
+function grad(c){ return `linear-gradient(135deg,${c[0]} 0%,${c[1]} 100%)`; }
 
-// SVG logo: "ОНЛАЙН ШКОЛА №1" with lime dot
-const logoSvg = `<svg class="thumb-logo" viewBox="0 0 120 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <text x="60" y="18" text-anchor="middle" fill="white" font-family="'Hoves','TT Hoves',Arial,sans-serif" font-size="15" font-weight="800" letter-spacing="1">ОНЛАЙН</text>
-  <text x="60" y="34" text-anchor="middle" fill="white" font-family="'Hoves','TT Hoves',Arial,sans-serif" font-size="16" font-weight="800" letter-spacing="1.5">ШКОЛА</text>
-  <text x="52" y="50" text-anchor="middle" fill="white" font-family="'Hoves','TT Hoves',Arial,sans-serif" font-size="16" font-weight="800" letter-spacing="0.5">№</text>
-  <circle cx="66" cy="46" r="4" fill="#C4F000"/>
-  <text x="76" y="50" text-anchor="middle" fill="white" font-family="'Hoves','TT Hoves',Arial,sans-serif" font-size="16" font-weight="800">1</text>
-</svg>`;
-
-const playOverlay = `<div class="thumb-play"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="rgba(255,255,255,0.25)"/><polygon points="10,7 10,17 18,12" fill="white"/></svg></div>`;
-
+const logoWhite = "assets/logo-white.png";
+const playOverlay = `<div class="t-play"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="rgba(255,255,255,.28)"/><polygon points="10,7 10,17 18,12" fill="white"/></svg></div>`;
 const typeNames = { basic:"Основные классы", webinar:"Вебинарные классы", profile:"Профильные классы" };
+const typeFormat = { basic:"Малые группы · до 20 учеников", webinar:"Вебинар · до 160 учеников", profile:"Профиль · до 20 учеников" };
 
-let currentTab = "landing";
-let currentType = null;
-let currentGradeFilter = "all";
+let currentTab="landing", currentType=null, currentGradeFilter="all";
 
+// Hero + card stats
+const uniqSubjects = [...new Set(lessons.map(l=>l.s))].length;
+document.getElementById("statLessons").textContent = lessons.length;
+document.getElementById("statSubjects").textContent = uniqSubjects;
 document.getElementById("countBasic").textContent = lessons.filter(l=>l.t==="basic").length + " уроков";
 document.getElementById("countWebinar").textContent = lessons.filter(l=>l.t==="webinar").length + " уроков";
 document.getElementById("countProfile").textContent = lessons.filter(l=>l.t==="profile").length + " уроков";
 
 document.getElementById("nav").addEventListener("click", e => {
     const tab = e.target.closest(".nav-tab");
-    if (!tab) return;
-    switchTab(tab.dataset.tab);
+    if (tab) switchTab(tab.dataset.tab);
 });
 
 function switchTab(tab) {
     currentTab = tab;
     document.querySelectorAll(".nav-tab").forEach(t => t.classList.toggle("active", t.dataset.tab === tab));
-
     if (tab === "landing") {
         document.getElementById("landing").classList.add("visible");
         document.getElementById("playlistContainer").style.display = "none";
@@ -726,6 +560,7 @@ function switchTab(tab) {
         currentGradeFilter = "all";
         renderPlaylist();
     }
+    window.scrollTo({top:0, behavior:"smooth"});
 }
 
 function renderPlaylist() {
@@ -733,13 +568,13 @@ function renderPlaylist() {
     const allOfType = lessons.filter(l => l.t === currentType);
     const grades = [...new Set(allOfType.map(l => l.g))].sort((a,b) => a-b);
 
+    document.getElementById("breadcrumb").innerHTML =
+        `<a href="#" onclick="switchTab('landing');return false;">Показательные уроки</a><span class="sep">›</span><span class="cur">${typeNames[currentType]}</span>`;
     document.getElementById("sidebarTitle").textContent = typeNames[currentType];
     document.getElementById("sidebarCount").textContent = filtered.length + " видео";
 
-    let filterHtml = `<button class="grade-chip ${currentGradeFilter==="all"?"active":""}" data-g="all">Все</button>`;
-    for (const g of grades) {
-        filterHtml += `<button class="grade-chip ${currentGradeFilter==String(g)?"active":""}" data-g="${g}">${g} кл</button>`;
-    }
+    let filterHtml = `<button class="grade-chip ${currentGradeFilter==="all"?"active":""}" data-g="all">Все классы</button>`;
+    for (const g of grades) filterHtml += `<button class="grade-chip ${currentGradeFilter==String(g)?"active":""}" data-g="${g}">${g} кл</button>`;
     const filterEl = document.getElementById("sidebarFilter");
     filterEl.innerHTML = filterHtml;
     filterEl.onclick = e => {
@@ -751,13 +586,18 @@ function renderPlaylist() {
 
     let listHtml = "";
     filtered.forEach((l, i) => {
-        const sub = l.p ? `${l.g} кл · ${l.p}` : `${l.g} класс`;
-        const tagText = `${l.s}, ${l.g} класс`;
+        const m = meta(l.s);
+        const sub = l.p ? `${l.g} класс · ${l.p}` : `${l.g} класс`;
         listHtml += `
             <div class="pl-item${i===0?' active':''}" data-idx="${i}" onclick="playItem(this, '${l.u}', '${l.s}', ${l.g}, '${l.p||""}')">
                 <span class="pl-item-num">${i+1}</span>
-                <span class="pl-item-playing">▶</span>
-                <div class="pl-item-thumb">${logoSvg}<span class="thumb-tag">${tagText}</span>${playOverlay}</div>
+                <span class="pl-item-playing"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,4 6,20 20,12"/></svg></span>
+                <div class="pl-item-thumb" style="background:${grad(m.c)}">
+                    <img class="t-logo" src="${logoWhite}" alt="">
+                    <span class="t-mono">${m.a}</span>
+                    <span class="t-grade">${l.g} класс</span>
+                    ${playOverlay}
+                </div>
                 <div class="pl-item-info">
                     <div class="pl-item-title">${l.s}</div>
                     <div class="pl-item-sub">${sub}</div>
@@ -767,12 +607,14 @@ function renderPlaylist() {
     document.getElementById("sidebarList").innerHTML = listHtml;
 
     if (filtered.length > 0) {
-        const first = filtered[0];
-        playVideo(first.u, first.s, first.g, first.p || "");
+        const f = filtered[0];
+        playVideo(f.u, f.s, f.g, f.p || "");
     } else {
-        document.getElementById("playerVideo").innerHTML = "";
-        document.getElementById("playerTitle").textContent = "Нет уроков для выбранного класса";
-        document.getElementById("playerMeta").textContent = "";
+        document.getElementById("playerVideo").innerHTML = `<div class="ph"><img src="${logoWhite}" alt="">Нет уроков для выбранного класса</div>`;
+        document.getElementById("playerMono").style.display = "none";
+        document.getElementById("playerTitle").textContent = "Выберите другой класс";
+        document.getElementById("playerChips").innerHTML = "";
+        document.getElementById("playerDesc").textContent = "";
     }
 }
 
@@ -781,17 +623,29 @@ function playItem(el, url, subject, grade, profile) {
     el.classList.add("active");
     playVideo(url, subject, grade, profile);
     if (window.innerWidth <= 860) {
-        document.getElementById("playerVideo").scrollIntoView({ behavior: "smooth", block: "start" });
+        const y = document.getElementById("playerVideo").getBoundingClientRect().top + window.scrollY - 90;
+        window.scrollTo({top:y, behavior:"smooth"});
     }
 }
 
 function playVideo(url, subject, grade, profile) {
+    const m = meta(subject);
     document.getElementById("playerVideo").innerHTML =
         `<iframe src="https://kinescope.io/embed/${url}" allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write; screen-wake-lock" allowfullscreen></iframe>`;
-    document.getElementById("playerTitle").textContent = `${emoji[subject]||""} ${subject} — ${grade} класс`;
-    document.getElementById("playerMeta").textContent = profile ? `Профиль: ${profile}` : typeNames[currentType];
+    const mono = document.getElementById("playerMono");
+    mono.style.display = "flex";
+    mono.style.background = grad(m.c);
+    mono.textContent = m.a;
+    document.getElementById("playerTitle").textContent = `${subject} — ${grade} класс`;
+    let chips = `<span class="chip chip-live"><span class="dot"></span>Запись урока</span>`;
+    chips += `<span class="chip chip-grade">${grade} класс</span>`;
+    chips += `<span class="chip chip-format">${typeNames[currentType]}</span>`;
+    if (profile) chips += `<span class="chip chip-profile">${profile}</span>`;
+    document.getElementById("playerChips").innerHTML = chips;
+    const fmt = typeFormat[currentType];
+    document.getElementById("playerDesc").textContent =
+        `Запись реального урока по предмету «${subject}» для ${grade} класса. Формат обучения: ${fmt.toLowerCase()}. Видео показывает занятие без монтажа и постановки — так, как оно проходит в Онлайн-школе №1.`;
 }
-
 </script>
 </body>
 </html>
