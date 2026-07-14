@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Показательные уроки — Онлайн-школа №1</title>
+    <style>
+        @font-face {
+            font-family: 'Hoves';
+            src: local('Hoves Regular'), local('TT Hoves');
+            font-weight: 400;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Hoves';
+            src: local('Hoves Medium'), local('TT Hoves Medium');
+            font-weight: 500;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Hoves';
+            src: local('Hoves Bold'), local('TT Hoves Bold');
+            font-weight: 700;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Hoves';
+            src: local('Hoves ExtraBold'), local('TT Hoves ExtraBold');
+            font-weight: 800;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Hoves';
+            src: local('Hoves Black'), local('TT Hoves Black');
+            font-weight: 900;
+            font-style: normal;
+        }
+
+        :root {
+            /* Violet */
+            --violet-900: #3D0B87;
+            --violet-700: #5B2A8C;
+            --violet-500: #8A00FF;
+            --violet-400: #7C3AED;
+            --violet-200: #C9BCE8;
+            --violet-100: #E4DDF3;
+            --violet-50: #F5F2FB;
+            /* Lime */
+            --lime-500: #BFEF00;
+            --lime-400: #C4F000;
+            --lime-300: #8FD14F;
+            --lime-100: #DBF3D5;
+            --lime-900: #04463D;
+            /* Pink */
+            --pink-500: #FB55C4;
+            --pink-100: #FBD8ED;
+            /* Neutral */
+            --neutral-900: #111111;
+            --neutral-800: #141414;
+            --neutral-600: #3A3A3A;
+            --neutral-500: #5A5A5A;
+            --neutral-400: #6A6A6A;
+            --neutral-300: #8A8A8A;
+            --neutral-200: #9A9A9A;
+            --neutral-150: #D9D9D9;
+            --neutral-100: #EEEEEE;
+            --neutral-50: #F6F5F3;
+            --white: #FFFFFF;
+            /* Shadows */
+            --shadow-sm: 0 8px 20px rgba(30,10,60,.06);
+            --shadow-md: 0 16px 36px rgba(30,10,60,.10);
+            --shadow-lg: 0 28px 60px rgba(30,10,60,.16);
+            /* Radii */
+            --radius-sm: 12px;
+            --radius-md: 20px;
+            --radius-lg: 28px;
+            --radius-pill: 999px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Hoves', 'TT Hoves', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--white);
+            color: var(--neutral-800);
+            line-height: 1.5;
+            min-height: 100vh;
+            font-weight: 400;
+        }
+
+        /* ── Header ── */
+        .header {
+            background: linear-gradient(135deg, var(--violet-900) 0%, var(--violet-500) 50%, var(--violet-400) 100%);
+            padding: 48px 24px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -60px; right: -40px;
+            width: 200px; height: 200px;
+            background: var(--lime-400);
+            border-radius: 50%;
+            opacity: 0.08;
+        }
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -80px; left: 10%;
+            width: 300px; height: 300px;
+            background: var(--pink-500);
+            border-radius: 50%;
+            opacity: 0.06;
+        }
+        .header-badge {
+            display: inline-block;
+            background: rgba(196,240,0,0.15);
+            color: var(--lime-400);
+            padding: 6px 16px;
+            border-radius: var(--radius-pill);
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            position: relative;
+        }
+        .header h1 {
+            font-size: clamp(28px, 5vw, 48px);
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+            position: relative;
+        }
+        .header p {
+            font-size: 16px;
+            font-weight: 400;
+            color: rgba(255,255,255,0.8);
+            max-width: 520px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* ── Navigation tabs ── */
+        .nav {
+            background: var(--white);
+            border-bottom: 1px solid var(--neutral-100);
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            box-shadow: var(--shadow-sm);
+        }
+        .nav-tab {
+            padding: 16px 28px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--neutral-300);
+            cursor: pointer;
+            border: none;
+            background: none;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s;
+            white-space: nowrap;
+            font-family: inherit;
+        }
+        .nav-tab:hover { color: var(--neutral-800); }
+        .nav-tab.active {
+            color: var(--violet-400);
+            border-bottom-color: var(--violet-400);
+            font-weight: 700;
+        }
+        .nav-tab .tab-icon { margin-right: 6px; }
+
+        /* ── Playlist layout ── */
+        .playlist-container {
+            max-width: 1360px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+        .playlist {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 24px;
+            align-items: start;
+        }
+
+        /* ── Player ── */
+        .player-wrap {
+            position: sticky;
+            top: 76px;
+        }
+        .player-video {
+            position: relative;
+            padding-bottom: 56.25%;
+            background: var(--neutral-800);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+        .player-video iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            border: none;
+        }
+        .player-info {
+            padding: 16px 4px 0;
+        }
+        .player-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--neutral-800);
+            margin-bottom: 4px;
+        }
+        .player-meta {
+            font-size: 13px;
+            color: var(--neutral-300);
+            font-weight: 500;
+        }
+
+        /* ── Sidebar playlist ── */
+        .sidebar {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--neutral-100);
+            overflow: hidden;
+            max-height: calc(100vh - 100px);
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--shadow-sm);
+        }
+        .sidebar-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--neutral-100);
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--neutral-800);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-shrink: 0;
+        }
+        .sidebar-count {
+            font-size: 12px;
+            color: var(--neutral-300);
+            font-weight: 500;
+            background: var(--violet-50);
+            padding: 2px 10px;
+            border-radius: var(--radius-pill);
+        }
+        .sidebar-filter {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--neutral-100);
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            flex-shrink: 0;
+        }
+        .grade-chip {
+            padding: 6px 12px;
+            border-radius: var(--radius-pill);
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            border: 1px solid var(--neutral-150);
+            background: transparent;
+            color: var(--neutral-300);
+            transition: all 0.15s;
+            font-family: inherit;
+        }
+        .grade-chip:hover {
+            border-color: var(--violet-200);
+            color: var(--violet-400);
+            background: var(--violet-50);
+        }
+        .grade-chip.active {
+            background: var(--violet-400);
+            color: var(--white);
+            border-color: var(--violet-400);
+        }
+        .sidebar-list {
+            overflow-y: auto;
+            flex: 1;
+        }
+        .sidebar-list::-webkit-scrollbar { width: 4px; }
+        .sidebar-list::-webkit-scrollbar-thumb { background: var(--violet-200); border-radius: 4px; }
+
+        /* ── Playlist item ── */
+        .pl-item {
+            display: flex;
+            gap: 12px;
+            padding: 10px 16px;
+            cursor: pointer;
+            transition: background 0.15s;
+            align-items: center;
+            border-left: 3px solid transparent;
+        }
+        .pl-item:hover { background: var(--violet-50); }
+        .pl-item.active {
+            background: var(--violet-50);
+            border-left-color: var(--violet-400);
+        }
+        .pl-item-num {
+            font-size: 12px;
+            color: var(--neutral-200);
+            min-width: 20px;
+            text-align: center;
+            flex-shrink: 0;
+            font-weight: 600;
+        }
+        .pl-item.active .pl-item-num { color: var(--violet-400); }
+        .pl-item-playing {
+            display: none;
+            width: 20px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+        .pl-item.active .pl-item-num { display: none; }
+        .pl-item.active .pl-item-playing { display: block; color: var(--violet-400); font-size: 10px; }
+        .pl-item-thumb {
+            width: 120px;
+            height: 68px;
+            border-radius: var(--radius-sm);
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--violet-900) 0%, var(--violet-500) 100%);
+        }
+        .pl-item-thumb .thumb-logo {
+            width: 48px;
+            height: auto;
+            opacity: 0.9;
+            margin-top: -2px;
+        }
+        .pl-item-thumb .thumb-tag {
+            font-size: 7px;
+            font-weight: 700;
+            color: var(--white);
+            background: rgba(255,255,255,0.18);
+            padding: 1px 6px;
+            border-radius: var(--radius-pill);
+            white-space: nowrap;
+            max-width: 110px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-top: 2px;
+            letter-spacing: 0.2px;
+        }
+        .pl-item-thumb .thumb-play {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(61,11,135,0.5);
+            opacity: 0;
+            transition: opacity 0.15s;
+        }
+        .pl-item-thumb .thumb-play svg {
+            width: 24px;
+            height: 24px;
+        }
+        .pl-item:hover .thumb-play { opacity: 1; }
+        .pl-item-info { flex: 1; min-width: 0; }
+        .pl-item-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--neutral-800);
+            margin-bottom: 2px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .pl-item.active .pl-item-title { color: var(--violet-400); }
+        .pl-item-sub {
+            font-size: 11px;
+            color: var(--neutral-300);
+            font-weight: 500;
+        }
+
+        /* ── Responsive thumbnail ── */
+        @media (max-width: 520px) {
+            .pl-item-thumb .thumb-logo { width: 40px; }
+            .pl-item-thumb .thumb-tag { font-size: 6px; }
+        }
+
+        /* ── Landing sections ── */
+        .landing { display: none; }
+        .landing.visible {
+            display: block;
+            padding: 48px 24px;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        .landing h2 {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--neutral-800);
+            margin-bottom: 4px;
+            letter-spacing: -0.02em;
+        }
+        .landing > p {
+            color: var(--neutral-500);
+            font-size: 15px;
+            font-weight: 400;
+        }
+        .section-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 20px;
+            margin-top: 32px;
+        }
+        .section-card {
+            background: var(--white);
+            border: 1px solid var(--neutral-100);
+            border-radius: var(--radius-lg);
+            padding: 32px 24px;
+            cursor: pointer;
+            transition: all 0.25s;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+        }
+        .section-card:hover {
+            border-color: var(--violet-200);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+        .section-card-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin: 0 auto 16px;
+        }
+        .section-card:nth-child(1) .section-card-icon {
+            background: var(--violet-50);
+        }
+        .section-card:nth-child(2) .section-card-icon {
+            background: var(--lime-100);
+        }
+        .section-card:nth-child(3) .section-card-icon {
+            background: var(--pink-100);
+        }
+        .section-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--neutral-800);
+        }
+        .section-card p {
+            font-size: 14px;
+            color: var(--neutral-500);
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+        .section-card-count {
+            display: inline-block;
+            background: var(--violet-50);
+            color: var(--violet-400);
+            padding: 4px 14px;
+            border-radius: var(--radius-pill);
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* ── Back button ── */
+        .back-btn {
+            display: none;
+            align-items: center;
+            gap: 6px;
+            background: none;
+            border: none;
+            color: var(--neutral-300);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            padding: 8px 16px;
+            margin-bottom: 12px;
+            border-radius: var(--radius-pill);
+            transition: all 0.15s;
+            font-family: inherit;
+        }
+        .back-btn:hover {
+            color: var(--violet-400);
+            background: var(--violet-50);
+        }
+        .back-btn.visible { display: inline-flex; }
+
+        /* ── Responsive ── */
+        @media (max-width: 860px) {
+            .playlist {
+                grid-template-columns: 1fr;
+            }
+            .player-wrap { position: static; }
+            .sidebar { max-height: 50vh; }
+            .header { padding: 32px 20px; }
+        }
+        @media (max-width: 520px) {
+            .nav-tab { padding: 12px 16px; font-size: 13px; }
+            .pl-item-thumb { width: 100px; height: 56px; }
+            .landing.visible { padding: 32px 16px; }
+            .section-cards { gap: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="header-badge">2026-2027 учебный год</div>
+    <h1>Показательные уроки</h1>
+    <p>Посмотрите, как проходят живые уроки в Онлайн-школе №1. Реальные занятия — без монтажа и постановки.</p>
+</div>
+
+<div class="nav" id="nav">
+    <button class="nav-tab active" data-tab="landing"><span class="tab-icon">🏠</span>Главная</button>
+    <button class="nav-tab" data-tab="basic"><span class="tab-icon">🎓</span>Основные классы</button>
+    <button class="nav-tab" data-tab="webinar"><span class="tab-icon">📡</span>Вебинарные классы</button>
+    <button class="nav-tab" data-tab="profile"><span class="tab-icon">🔬</span>Профильные классы</button>
+</div>
+
+<!-- Landing -->
+<div class="landing visible" id="landing">
+    <h2>Выберите формат обучения</h2>
+    <p>Каждый урок — это запись реального занятия с нашими учениками</p>
+    <div class="section-cards">
+        <div class="section-card" onclick="switchTab('basic')">
+            <div class="section-card-icon">🎓</div>
+            <h3>Основные классы</h3>
+            <p>Тарифы «Классы» и «Доступ». Маленькие группы до 20 учеников, индивидуальный подход.</p>
+            <span class="section-card-count" id="countBasic"></span>
+        </div>
+        <div class="section-card" onclick="switchTab('webinar')">
+            <div class="section-card-icon">📡</div>
+            <h3>Вебинарные классы</h3>
+            <p>Тариф «Вебинар». Групповые занятия до 160 учеников, доступная цена.</p>
+            <span class="section-card-count" id="countWebinar"></span>
+        </div>
+        <div class="section-card" onclick="switchTab('profile')">
+            <div class="section-card-icon">🔬</div>
+            <h3>Профильные классы</h3>
+            <p>Углублённое изучение: инфо-мат, физ-мат, хим-био, соц-гум. До 20 учеников.</p>
+            <span class="section-card-count" id="countProfile"></span>
+        </div>
+    </div>
+</div>
+
+<!-- Playlist views -->
+<div class="playlist-container" id="playlistContainer" style="display:none;">
+    <button class="back-btn visible" onclick="switchTab('landing')">← Назад к разделам</button>
+    <div class="playlist">
+        <div class="player-wrap">
+            <div class="player-video" id="playerVideo"></div>
+            <div class="player-info">
+                <div class="player-title" id="playerTitle">Выберите урок из списка</div>
+                <div class="player-meta" id="playerMeta"></div>
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <span id="sidebarTitle">Плейлист</span>
+                <span class="sidebar-count" id="sidebarCount"></span>
+            </div>
+            <div class="sidebar-filter" id="sidebarFilter"></div>
+            <div class="sidebar-list" id="sidebarList"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+const lessons = [
+    // ── Основные классы ──
+    {g:1,s:"Литературное чтение",t:"basic",u:"gL39eoFzrpojoHSfZU3yYp"},
+    {g:1,s:"Русский язык",t:"basic",u:"t8cZ4uT7ytxMosEvTh8AAf"},
+    {g:1,s:"Математика",t:"basic",u:"ohbu2hqAwmJAJeLXfhgG4m"},
+    {g:2,s:"Английский язык",t:"basic",u:"85AGojkxpkJXMvESUZWsWc"},
+    {g:2,s:"Математика",t:"basic",u:"43sBhEGXw5B94gNfxo39Xc"},
+    {g:2,s:"Русский язык",t:"basic",u:"a7GqZRmQxGDcn7GY1YaFEV"},
+    {g:3,s:"Английский язык",t:"basic",u:"0GqNMpzPqsv3XwXAsjJbpD"},
+    {g:3,s:"Математика",t:"basic",u:"q51dFgDSfCk39Bm3jnnGQt"},
+    {g:3,s:"Русский язык",t:"basic",u:"b2q1xH2o69VZkUPVyPXyzq"},
+    {g:3,s:"Окружающий мир",t:"basic",u:"7r5CqJqUqfJiXWPu3iZKf9"},
+    {g:4,s:"Английский язык",t:"basic",u:"cVmF4NKYKu4kEbjdocbakq"},
+    {g:4,s:"Математика",t:"basic",u:"fzisQ37UDs5kc59zFnH6EQ"},
+    {g:4,s:"Окружающий мир",t:"basic",u:"eSmohu0EHHcYkqr5sqYriA"},
+    {g:4,s:"Русский язык",t:"basic",u:"paJD61i6QG9kXSvJF9dynh"},
+    {g:5,s:"Английский язык",t:"basic",u:"f8rJ5FLR3rAyAT9P8Ukpzt"},
+    {g:5,s:"География",t:"basic",u:"eGDw3dnKhuEVVuhUcSH2NN"},
+    {g:5,s:"Литература",t:"basic",u:"xpvjgHigbWhNYxGFXBJHnR"},
+    {g:5,s:"Математика",t:"basic",u:"pmqxULa9J6XMXgW9db1sPV"},
+    {g:5,s:"Русский язык",t:"basic",u:"fV91K8HxeR7uSKbehjgmVx"},
+    {g:6,s:"Английский язык",t:"basic",u:"0Qfx3ynvkkY9kjjFVNiqHK"},
+    {g:6,s:"География",t:"basic",u:"5hCG8uCwWAfnu4vfxQ8sKx"},
+    {g:6,s:"Математика",t:"basic",u:"hpvMKHSBy1oACWxt2eguxA"},
+    {g:6,s:"Русский язык",t:"basic",u:"wLScxTC3wVj2yEo8fDWZeA"},
+    {g:7,s:"Английский язык",t:"basic",u:"91SLg2ogzrorxshNWpUq2D"},
+    {g:7,s:"Алгебра",t:"basic",u:"bLCjNSXmxCeZcZZYzgzjfD"},
+    {g:7,s:"Литература",t:"basic",u:"6HHPDHyfieGEPQNjZfBHxu"},
+    {g:7,s:"Русский язык",t:"basic",u:"cYDiDKqxx2BoMJVLp9d5Rn"},
+    {g:8,s:"Английский язык",t:"basic",u:"rWDgfA42bUZySLb2ZTJYVe"},
+    {g:8,s:"География",t:"basic",u:"99RuYs5rjkGCdNcACrNtTB"},
+    {g:8,s:"Русский язык",t:"basic",u:"5ZcyEUkNa3jQirsvUyzVa1"},
+    {g:8,s:"Химия",t:"basic",u:"ehknbLZvRpCWK77GaxkSvs"},
+    {g:9,s:"Алгебра",t:"basic",u:"7bvXCvjGLqYshteCGA6uWZ"},
+    {g:9,s:"Английский язык",t:"basic",u:"xtNyCrJ2i2dK5KoDRSMbwx"},
+    {g:9,s:"География",t:"basic",u:"hf4SjabLxQMW1GNpvom4Sn"},
+    {g:9,s:"Русский язык",t:"basic",u:"kAYzqwJE8noMykkWjZcEcx"},
+    {g:9,s:"Химия",t:"basic",u:"ruT9umDGYdr5avosb5hv5j"},
+    {g:10,s:"Алгебра",t:"basic",u:"3H8hRRyPLqQY83FQcHTMa9"},
+    {g:10,s:"Английский язык",t:"basic",u:"u59yXkv7gk4gBcrYE36gHx"},
+    {g:10,s:"Геометрия",t:"basic",u:"6fbEdtwgtLTRv6YeS1WnjK"},
+    {g:10,s:"Информатика",t:"basic",u:"bL74iQ9xTeY9yoSf7bVUsY"},
+    {g:10,s:"Русский язык",t:"basic",u:"fWLW2kbiBn7dudXmhh1cdS"},
+    {g:11,s:"Биология",t:"basic",u:"9tbSi9Eu9iEwuoH5uX6ARG"},
+    {g:11,s:"Геометрия",t:"basic",u:"0yJyPFCiHLr28oTXP7tjYm"},
+    {g:11,s:"Русский язык",t:"basic",u:"429rtYeq5DAu811TkT6khZ"},
+    {g:11,s:"Физика",t:"basic",u:"bMuXK9NcZW8vpdjVhQjHu"},
+
+    // ── Вебинарные ──
+    {g:5,s:"Русский язык",t:"webinar",u:"2ustyPdAQPR4QpjFuUJSbL"},
+    {g:5,s:"История",t:"webinar",u:"qxZVDEBukCswfd7WkoCjei"},
+    {g:6,s:"Русский язык",t:"webinar",u:"shQ53bHHGsTYLFYbZktvrh"},
+    {g:6,s:"Английский язык",t:"webinar",u:"bQ6wXbBdMYd6bbXFVK3sFp"},
+    {g:7,s:"Русский язык",t:"webinar",u:"uwvWR6NZZi7rcrGQYSoUVK"},
+    {g:7,s:"Физика",t:"webinar",u:"6mtY8oFHEiQUejcsCrZTGy"},
+    {g:8,s:"Химия",t:"webinar",u:"x4gMuLp8KPgjTugxKfJMKo"},
+    {g:8,s:"Физика",t:"webinar",u:"s1PQo8uUJxY4WFDoSDdRuy"},
+    {g:9,s:"Английский язык",t:"webinar",u:"iAht3EiTFxwqGbLqzmxxEg"},
+    {g:9,s:"Информатика",t:"webinar",u:"pXbnxCw21TyUMeVFoGmY9B"},
+    {g:10,s:"Литература",t:"webinar",u:"eZQD2mCWSaxWvL458L3zCi"},
+    {g:10,s:"Биология",t:"webinar",u:"shhw1svq2UKpdwp3PJPGxd"},
+    {g:11,s:"География",t:"webinar",u:"4gEXzYLePGPaVfzkKmkQkQ"},
+    {g:11,s:"Биология",t:"webinar",u:"eUhhJ9cyAGy1wFwAXVNqtr"},
+
+    // ── Профильные ──
+    {g:7,s:"Обществознание",t:"profile",p:"Социально-гуманитарный",u:"iCKogiDqxRNj47VA8Ma8bk"},
+    {g:8,s:"Алгебра",t:"profile",p:"Информационно-математический",u:"5hk79W8ABNcZHSx4jy3RNr"},
+    {g:8,s:"Информатика",t:"profile",p:"Информационно-математический",u:"piqp7vESiEtUo5CSRJeACv"},
+    {g:8,s:"Физика",t:"profile",p:"Физико-математический",u:"ioWQNggcXFBJEWa45JA4QX"},
+    {g:8,s:"Алгебра",t:"profile",p:"Физико-математический",u:"4Q5qZirCVQnX78SdiNbG3R"},
+    {g:8,s:"Биология",t:"profile",p:"Химико-биологический",u:"5MiQnXPXaeEJPYcCixLKGH"},
+    {g:8,s:"Химия",t:"profile",p:"Химико-биологический",u:"ngqjZCJvp8Tn1MbvWx6LCw"},
+    {g:9,s:"Алгебра",t:"profile",p:"Информационно-математический",u:"9ZFSRjpMTccQG46cvibTp9"},
+    {g:9,s:"Информатика",t:"profile",p:"Информационно-математический",u:"9TW3G9ps1TVSZtvFoQcoYj"},
+    {g:9,s:"Алгебра",t:"profile",p:"Физико-математический",u:"9ZFSRjpMTccQG46cvibTp9"},
+    {g:9,s:"Физика",t:"profile",p:"Физико-математический",u:"7KKHrd57T6KtQFpSe8mz2j"},
+    {g:9,s:"Химия",t:"profile",p:"Химико-биологический",u:"q1gD4V7ae2bmkWcEUipkfN"},
+    {g:9,s:"Биология",t:"profile",p:"Химико-биологический",u:"avF4MyK9NtjZCFRsjAwKw1"},
+    {g:10,s:"Алгебра",t:"profile",p:"Информационно-математический",u:"mo4U98YpoguJhw26aPFHPJ"},
+    {g:10,s:"Информатика",t:"profile",p:"Информационно-математический",u:"uAUo9rpua1235D6wctyQX9"},
+    {g:10,s:"Алгебра",t:"profile",p:"Физико-математический",u:"mo4U98YpoguJhw26aPFHPJ"},
+    {g:10,s:"Физика",t:"profile",p:"Физико-математический",u:"c8cT5EL64ddGgDdBxa6VRn"},
+    {g:10,s:"Химия",t:"profile",p:"Химико-биологический",u:"e9i49Q9UoA2uK8F3FgyQbV"},
+    {g:10,s:"Биология",t:"profile",p:"Химико-биологический",u:"dXVetfv7U76cVpw9HXZJdR"},
+    {g:10,s:"Обществознание",t:"profile",p:"Социально-гуманитарный",u:"beQoH2HznT9Whesi8ih7Y5"},
+    {g:11,s:"История",t:"profile",p:"Социально-гуманитарный",u:"uCazLmeKqWajHv4jM9227W"},
+    {g:11,s:"Обществознание",t:"profile",p:"Социально-гуманитарный",u:"jKwRYDduMeXowsUdS1tETh"},
+    {g:11,s:"Информатика",t:"profile",p:"Информационно-математический",u:"o45Gjr9D7YkCYJj6426WZn"},
+    {g:11,s:"Алгебра",t:"profile",p:"Информационно-математический",u:"bSYoatD6ZxrvkguAetGxnH"},
+    {g:11,s:"Физика",t:"profile",p:"Физико-математический",u:"kUbe3Ve9Jq75RgeNmyibwJ"},
+    {g:11,s:"Геометрия",t:"profile",p:"Физико-математический",u:"jYicCT5iDHcqjWiiV63Jda"},
+    {g:11,s:"Химия",t:"profile",p:"Химико-биологический",u:"myhqQXA371rJs8ncwQaCJN"},
+    {g:11,s:"Биология",t:"profile",p:"Химико-биологический",u:"tDVWnj6DxvZg8WBUuXAfux"},
+];
+
+const emoji = {
+    "Русский язык":"📖","Математика":"📐","Литературное чтение":"📚",
+    "Английский язык":"🇬🇧","Окружающий мир":"🌍","Алгебра":"📊",
+    "Геометрия":"📏","Литература":"📕","География":"🗺️",
+    "Физика":"⚡","Химия":"🧪","Биология":"🧬",
+    "Информатика":"💻","История":"🏛️","Обществознание":"⚖️"
+};
+
+// SVG logo: "ОНЛАЙН ШКОЛА №1" with lime dot
+const logoSvg = `<svg class="thumb-logo" viewBox="0 0 120 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <text x="60" y="18" text-anchor="middle" fill="white" font-family="'Hoves','TT Hoves',Arial,sans-serif" font-size="15" font-weight="800" letter-spacing="1">ОНЛАЙН</text>
+  <text x="60" y="34" text-anchor="middle" fill="white" font-family="'Hoves','TT Hoves',Arial,sans-serif" font-size="16" font-weight="800" letter-spacing="1.5">ШКОЛА</text>
+  <text x="52" y="50" text-anchor="middle" fill="white" font-family="'Hoves','TT Hoves',Arial,sans-serif" font-size="16" font-weight="800" letter-spacing="0.5">№</text>
+  <circle cx="66" cy="46" r="4" fill="#C4F000"/>
+  <text x="76" y="50" text-anchor="middle" fill="white" font-family="'Hoves','TT Hoves',Arial,sans-serif" font-size="16" font-weight="800">1</text>
+</svg>`;
+
+const playOverlay = `<div class="thumb-play"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="rgba(255,255,255,0.25)"/><polygon points="10,7 10,17 18,12" fill="white"/></svg></div>`;
+
+const typeNames = { basic:"Основные классы", webinar:"Вебинарные классы", profile:"Профильные классы" };
+
+let currentTab = "landing";
+let currentType = null;
+let currentGradeFilter = "all";
+
+document.getElementById("countBasic").textContent = lessons.filter(l=>l.t==="basic").length + " уроков";
+document.getElementById("countWebinar").textContent = lessons.filter(l=>l.t==="webinar").length + " уроков";
+document.getElementById("countProfile").textContent = lessons.filter(l=>l.t==="profile").length + " уроков";
+
+document.getElementById("nav").addEventListener("click", e => {
+    const tab = e.target.closest(".nav-tab");
+    if (!tab) return;
+    switchTab(tab.dataset.tab);
+});
+
+function switchTab(tab) {
+    currentTab = tab;
+    document.querySelectorAll(".nav-tab").forEach(t => t.classList.toggle("active", t.dataset.tab === tab));
+
+    if (tab === "landing") {
+        document.getElementById("landing").classList.add("visible");
+        document.getElementById("playlistContainer").style.display = "none";
+        currentType = null;
+    } else {
+        document.getElementById("landing").classList.remove("visible");
+        document.getElementById("playlistContainer").style.display = "block";
+        currentType = tab;
+        currentGradeFilter = "all";
+        renderPlaylist();
+    }
+}
+
+function renderPlaylist() {
+    const filtered = lessons.filter(l => l.t === currentType && (currentGradeFilter === "all" || l.g === parseInt(currentGradeFilter)));
+    const allOfType = lessons.filter(l => l.t === currentType);
+    const grades = [...new Set(allOfType.map(l => l.g))].sort((a,b) => a-b);
+
+    document.getElementById("sidebarTitle").textContent = typeNames[currentType];
+    document.getElementById("sidebarCount").textContent = filtered.length + " видео";
+
+    let filterHtml = `<button class="grade-chip ${currentGradeFilter==="all"?"active":""}" data-g="all">Все</button>`;
+    for (const g of grades) {
+        filterHtml += `<button class="grade-chip ${currentGradeFilter==String(g)?"active":""}" data-g="${g}">${g} кл</button>`;
+    }
+    const filterEl = document.getElementById("sidebarFilter");
+    filterEl.innerHTML = filterHtml;
+    filterEl.onclick = e => {
+        const chip = e.target.closest(".grade-chip");
+        if (!chip) return;
+        currentGradeFilter = chip.dataset.g;
+        renderPlaylist();
+    };
+
+    let listHtml = "";
+    filtered.forEach((l, i) => {
+        const sub = l.p ? `${l.g} кл · ${l.p}` : `${l.g} класс`;
+        const tagText = `${l.s}, ${l.g} класс`;
+        listHtml += `
+            <div class="pl-item${i===0?' active':''}" data-idx="${i}" onclick="playItem(this, '${l.u}', '${l.s}', ${l.g}, '${l.p||""}')">
+                <span class="pl-item-num">${i+1}</span>
+                <span class="pl-item-playing">▶</span>
+                <div class="pl-item-thumb">${logoSvg}<span class="thumb-tag">${tagText}</span>${playOverlay}</div>
+                <div class="pl-item-info">
+                    <div class="pl-item-title">${l.s}</div>
+                    <div class="pl-item-sub">${sub}</div>
+                </div>
+            </div>`;
+    });
+    document.getElementById("sidebarList").innerHTML = listHtml;
+
+    if (filtered.length > 0) {
+        const first = filtered[0];
+        playVideo(first.u, first.s, first.g, first.p || "");
+    } else {
+        document.getElementById("playerVideo").innerHTML = "";
+        document.getElementById("playerTitle").textContent = "Нет уроков для выбранного класса";
+        document.getElementById("playerMeta").textContent = "";
+    }
+}
+
+function playItem(el, url, subject, grade, profile) {
+    document.querySelectorAll(".pl-item").forEach(i => i.classList.remove("active"));
+    el.classList.add("active");
+    playVideo(url, subject, grade, profile);
+    if (window.innerWidth <= 860) {
+        document.getElementById("playerVideo").scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+}
+
+function playVideo(url, subject, grade, profile) {
+    document.getElementById("playerVideo").innerHTML =
+        `<iframe src="https://kinescope.io/embed/${url}" allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write; screen-wake-lock" allowfullscreen></iframe>`;
+    document.getElementById("playerTitle").textContent = `${emoji[subject]||""} ${subject} — ${grade} класс`;
+    document.getElementById("playerMeta").textContent = profile ? `Профиль: ${profile}` : typeNames[currentType];
+}
+
+</script>
+</body>
+</html>
