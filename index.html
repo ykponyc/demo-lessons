@@ -356,7 +356,6 @@
                         <div class="player-chips" id="playerChips"></div>
                     </div>
                 </div>
-                <p class="player-desc" id="playerDesc"></p>
             </div>
         </div>
         <div class="sidebar">
@@ -631,9 +630,6 @@ function playVideo(url, subject, grade, profile) {
     chips += `<span class="chip chip-format">${typeNames[currentType]}</span>`;
     if (profile) chips += `<span class="chip chip-profile">${profile}</span>`;
     document.getElementById("playerChips").innerHTML = chips;
-    const fmt = typeFormat[currentType];
-    document.getElementById("playerDesc").textContent =
-        `Запись реального урока по предмету «${subject}» для ${grade} класса. Формат обучения: ${fmt.toLowerCase()}. Видео показывает занятие без монтажа и постановки — так, как оно проходит в Онлайн-школе №1.`;
 }
 </script>
 </body>
